@@ -128,7 +128,7 @@ public class Inicio extends javax.swing.JFrame {
         Verificaciones ver= new Verificaciones();
         
         
-        
+        //el problema está aquí
         empleado=ver.VerificarEmpleado(usuario);
         
         
