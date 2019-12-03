@@ -2,6 +2,7 @@ package Entidad;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +14,7 @@ import javax.persistence.TableGenerator;
 @Entity
 @Table(name="recibos")
 public class Recibo implements Serializable{
-    private ArrayList<Producto> productos_vendidos = new ArrayList();
+    private List<Producto> productos_vendidos = new ArrayList();
     private int valor_de_la_venta = 0;
     private String empleado;
                 @Id
@@ -24,11 +25,11 @@ public class Recibo implements Serializable{
         
     }
     
-    public ArrayList<Producto> getProductos_vendidos() {
+    public List<Producto> getProductos_vendidos() {
         return productos_vendidos;
     }
 
-    public void setProductos_vendidos(ArrayList<Producto> productos_vendidos) {
+    public void setProductos_vendidos(List<Producto> productos_vendidos) {
         this.productos_vendidos = productos_vendidos;
     }
 

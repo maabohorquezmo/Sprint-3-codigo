@@ -123,8 +123,8 @@ public class Inicio extends javax.swing.JFrame {
         
         
         Empleado usuario= new Empleado();
-        usuario.setUsuario(Usuario.getText());
-        usuario.setContraseña(Contrasenia.getText());
+        usuario.setNombre(Usuario.getText());
+        usuario.setContrasenia(Contrasenia.getText());
         Verificaciones ver= new Verificaciones();
         
         
@@ -147,7 +147,6 @@ public class Inicio extends javax.swing.JFrame {
             }
             else{
                 Resultado.setText("Bienvenido Empleado " + empleado.getApellido());
-                Resultado.setText("Bienvenido Gerente " + empleado.getApellido());
                 Superp.setVisible(false);
                 Superp.removeAll();
                 Superp.add(fp2);
@@ -198,7 +197,7 @@ public class Inicio extends javax.swing.JFrame {
         Gerente.setApellido("Orozco");
         Gerente.setCargo("Gerente");
         Gerente.setUsuario("elgerente");
-        Gerente.setContraseña("12345");
+        Gerente.setContrasenia("12345");
         Verificaciones ver= new Verificaciones();
         ver.edao.crear(Gerente);
     }

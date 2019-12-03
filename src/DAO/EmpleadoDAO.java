@@ -97,11 +97,11 @@ public class EmpleadoDAO {
         EntityManager em=emf.createEntityManager();
         Empleado emp= null;
         Query q;
-        q = em.createQuery("SELECT u FROM Empleado u "+
-                "WHERE u.nombre = :nombre " +
-                "AND u.contraseña = :contraseña")
+        q = em.createQuery("SELECT EMPLEADOS FROM Empleado EMPLEADOS "+
+                "WHERE EMPLEADOS.nombre = :nombre " +
+                "AND empleados.contrasenia = :contrasenia")
                 .setParameter("nombre", par.getNombre())
-                .setParameter("contraseña", par.getContraseña());
+                .setParameter("contrasenia", par.getContrasenia());
         try{
             emp=(Empleado)q.getSingleResult();
         }catch(NonUniqueResultException e){

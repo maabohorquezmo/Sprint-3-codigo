@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Entidad;
 
 import java.io.Serializable;
@@ -14,17 +10,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- *
- * @author User
- */
+
 @Entity
-@Table(name="empleados")
+@Table(name="Empleados")
 public class Empleado implements Serializable{
     private String nombre;
     private String apellido;
     private String usuario;
-    private String contraseña;
+    private String contrasenia;
     private String cargo;
     private int cedula;
     
@@ -67,12 +60,12 @@ public class Empleado implements Serializable{
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public int getCedula() {

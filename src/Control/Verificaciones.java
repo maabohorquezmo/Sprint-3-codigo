@@ -32,26 +32,16 @@ public class Verificaciones {
             return true;
         }
         return false;
-        /*for(Producto p: FramePrincipal.sistema.getProductos()){
-            if(p.getNombre().equals(nombre)){
-                return false;
-            }
-        }
-        return true;
-*/
+        
     }
     public String AddProductoNuevo(Producto producto){
-        /*
-        if(!verificarnombrenuevo(producto.getNombre())){
-            return "Nombre ya existente!";
-        }*/
+        
         if(producto.getCantidad()<0){
             return "No puede inicializar el producto con una cantidad negativa!";
         }
         if(producto.getValor()<0){
             return "No puede inicializar el producto con un valor negativo!";
         }
-        //FramePrincipal.sistema.add(producto);
                 pdao.crear(producto);
         return "Nuevo producto ingresado exitosamente!";
     }

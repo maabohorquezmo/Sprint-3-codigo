@@ -5,15 +5,17 @@
  */
 package Frontera;
 
+import Frontera.Ventas.Venta;
+
 /**
  *
  * @author 192545681742
  */
 public class FramePrincipal2 extends javax.swing.JPanel {
 
-    /**
-     * Creates new form FramePrincipal2
-     */
+   
+    private Venta ventas = new Venta();
+    
     public FramePrincipal2() {
         initComponents();
     }
@@ -79,7 +81,10 @@ public class FramePrincipal2 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+        panelPrincipal.setVisible(false);
+        panelPrincipal.removeAll();
+        panelPrincipal.add(ventas);
+        panelPrincipal.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

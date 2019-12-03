@@ -83,7 +83,7 @@ public class ConsultaEmpleados extends javax.swing.JPanel {
         Verificaciones ver= new Verificaciones();
         List <Empleado> lista= ver.edao.leerEMP();
         for(Empleado b: lista){
-             model.insertRow(model.getRowCount(), new Object[]{b.getNombre(),b.getApellido(),b.getCedula(),b.getUsuario(),b.getContraseña()});
+             model.insertRow(model.getRowCount(), new Object[]{b.getNombre(),b.getApellido(),b.getCedula(),b.getUsuario(),b.getContrasenia()});
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

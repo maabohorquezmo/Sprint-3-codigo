@@ -133,7 +133,7 @@ public class EditarEmpleado extends javax.swing.JPanel {
             }
             else{
                 ver.edao.actualizarEDIT(h, nombre.getText(), apellido.getText(), Integer.parseInt(ced2));
-                Resultado.setText("El empleado fue eliminado de la base de datos");
+                Resultado.setText("Los datos del empleado fueron editados con exito");
             }
         }
         else{

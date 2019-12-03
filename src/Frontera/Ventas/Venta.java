@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Frontera;
+package Frontera.Ventas;
 
 import Control.Verificaciones;
 import Entidad.Producto;
 import Entidad.Recibo;
 import Entidad.Sistema;
+import Frontera.Inicio;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class Venta extends javax.swing.JPanel {
     DefaultTableModel model;
     DefaultTableModel carrito;
-    ArrayList<Producto> lista_carrito = new ArrayList();
+    public ArrayList<Producto> lista_carrito = new ArrayList();
     
     public Venta() {
         initComponents();
@@ -324,9 +325,10 @@ public class Venta extends javax.swing.JPanel {
                 recibo.setValor_de_la_venta(n + c.getCantidad()*a.getValor());
                 ver.pdao.actualizarCANT(a, b);
                 resultado.setText("Existencias eliminadas");
+                recibo.setEmpleado(Inicio.empleado.getNombre() + Inicio.empleado.getApellido());
                 ver.rdao.crear(recibo);
             }
-            recibo.setEmpleado(Inicio.empleado.getNombre() + Inicio.empleado.getApellido());
+            
             recibox.setText(String.valueOf(recibo.getValor_de_la_venta()));
             empleadox.setText(recibo.getEmpleado());
             lista_carrito.clear();
