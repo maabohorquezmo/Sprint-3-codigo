@@ -98,9 +98,9 @@ public class EmpleadoDAO {
         Empleado emp= null;
         Query q;
         q = em.createQuery("SELECT EMPLEADOS FROM Empleado EMPLEADOS "+
-                "WHERE EMPLEADOS.nombre = :nombre " +
+                "WHERE EMPLEADOS.usuario = :usuario " +
                 "AND empleados.contrasenia = :contrasenia")
-                .setParameter("nombre", par.getNombre())
+                .setParameter("usuario", par.getUsuario())
                 .setParameter("contrasenia", par.getContrasenia());
         try{
             emp=(Empleado)q.getSingleResult();
@@ -130,7 +130,7 @@ public class EmpleadoDAO {
         }
     }
     
-    public boolean actualizarEDIT(Empleado object, String nombrenuevo,String apellidonuevo, int cedula){
+    public boolean actualizarEDIT(Empleado object, String nombrenuevo,String apellidonuevo, String usuarionuevo, String contrasenianueva, int cedula){
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
         boolean ret=false;
@@ -144,6 +144,12 @@ public class EmpleadoDAO {
             }
             if(cedula!=0){
                 object.setCedula(cedula);
+            }
+            if(usuarionuevo!=null){
+                object.setUsuario(usuarionuevo);
+            }
+            if(contrasenianueva!=null){
+                object.setContrasenia(contrasenianueva);
             }
             
             em.merge(object);

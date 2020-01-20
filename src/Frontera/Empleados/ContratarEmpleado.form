@@ -42,6 +42,7 @@
                           <Component id="cedula" max="32767" attributes="0"/>
                           <Component id="usuario" max="32767" attributes="0"/>
                           <Component id="contrasenia" max="32767" attributes="0"/>
+                          <Component id="resultado" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -79,7 +80,9 @@
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="219" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="resultado" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace pref="167" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -130,6 +133,8 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="resultado">
     </Component>
   </SubComponents>
 </Form>

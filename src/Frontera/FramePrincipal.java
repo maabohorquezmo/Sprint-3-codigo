@@ -1,10 +1,13 @@
 
 package Frontera;
 
+
 import Frontera.Ventas.Venta;
 import Entidad.Sistema;
+import Frontera.Clientes.GestionDeClientes;
 import Frontera.Productos.GestionDeProductos;
 import Frontera.Empleados.*;
+import Frontera.Estadisticas.EstadisticasGUI;
 import Frontera.Ventas.Venta;
 
 
@@ -13,6 +16,8 @@ public class FramePrincipal extends javax.swing.JPanel {
    private Venta ventas = new Venta();
    private GestiondeEmpleados gestionEmp = new GestiondeEmpleados();
    public static Sistema sistema= new Sistema();
+   private GestionDeClientes fidelizacion = new GestionDeClientes();
+   private EstadisticasGUI estadisticas = new EstadisticasGUI();
     
    
     public FramePrincipal() {
@@ -65,6 +70,11 @@ public class FramePrincipal extends javax.swing.JPanel {
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton3);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 204));
@@ -139,8 +149,18 @@ public class FramePrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        panelPrincipal.setVisible(false);
+        panelPrincipal.removeAll();
+        panelPrincipal.add(estadisticas);
+        panelPrincipal.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        panelPrincipal.setVisible(false);
+        panelPrincipal.removeAll();
+        panelPrincipal.add(fidelizacion);
+        panelPrincipal.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,6 +5,7 @@
     <class>Entidad.Producto</class>
     <class>Entidad.Empleado</class>
     <class>Entidad.Recibo</class>
+    <class>Entidad.Cliente</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/SIG-TerpelPU"/>
       <property name="javax.persistence.jdbc.user" value="app"/>

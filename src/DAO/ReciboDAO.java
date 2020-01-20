@@ -5,7 +5,9 @@
  */
 package DAO;
 
+
 import Entidad.Recibo;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -73,4 +75,40 @@ public class ReciboDAO {
             return emp;
         }
     }
+    
+    public List <Recibo> ventasEmpleado(String cedula){
+        EntityManager em=emf.createEntityManager();
+        List <Recibo> recibo= null;
+        Query q= em.createQuery("SELECT r FROM Recibo r "+
+                "WHERE r.empleado = :cedula")
+                .setParameter("cedula", cedula);
+        try{
+            recibo=(List)q.getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+            
+        }finally{
+            em.close();
+            return recibo;
+        }
+    }
+    
+    public List <Recibo> comprasCliente(String cedula){
+        EntityManager em=emf.createEntityManager();
+        List <Recibo> recibo= null;
+        Query q= em.createQuery("SELECT r FROM Recibo r "+
+                "WHERE r.cedula = :cedula")
+                .setParameter("cedula", cedula);
+        try{
+            recibo=(List)q.getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+            
+        }finally{
+            em.close();
+            return recibo;
+        }
+    }
+    
+    
 }

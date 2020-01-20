@@ -16,6 +16,7 @@ import javax.persistence.TableGenerator;
 public class Recibo implements Serializable{
     private List<Producto> productos_vendidos = new ArrayList();
     private int valor_de_la_venta = 0;
+    private String cedula="";
     private String empleado;
                 @Id
         @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -48,7 +49,14 @@ public class Recibo implements Serializable{
     public void setEmpleado(String empleado) {
         this.empleado = empleado;
     }
+    
+    public String getCedula() {
+        return cedula;
+    }
 
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
     public int getId() {
         return id;
     }

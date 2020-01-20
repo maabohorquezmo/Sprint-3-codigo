@@ -5,8 +5,10 @@
  */
 package Frontera.Empleados;
 
+import Control.GestionDeEmpleados;
 import Control.Verificaciones;
 import Entidad.Empleado;
+import java.util.List;
 
 
 public class ContratarEmpleado extends javax.swing.JPanel {
@@ -33,6 +35,7 @@ public class ContratarEmpleado extends javax.swing.JPanel {
         contrasenia = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        resultado = new javax.swing.JLabel();
 
         jLabel2.setText("Apellido");
 
@@ -80,7 +83,8 @@ public class ContratarEmpleado extends javax.swing.JPanel {
                             .addComponent(apellido)
                             .addComponent(cedula)
                             .addComponent(usuario)
-                            .addComponent(contrasenia))))
+                            .addComponent(contrasenia)
+                            .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(701, 701, 701))
         );
         layout.setVerticalGroup(
@@ -108,7 +112,9 @@ public class ContratarEmpleado extends javax.swing.JPanel {
                     .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addComponent(jButton1)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -117,22 +123,9 @@ public class ContratarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_contraseniaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Verificaciones ver= new Verificaciones();
-        Empleado empleado= new Empleado();
-        empleado.setNombre(nombre.getText());
-        empleado.setApellido(apellido.getText());
-        empleado.setCargo("Empleado");
-        empleado.setUsuario(usuario.getText());
-        empleado.setContrasenia(contrasenia.getText());
-        String a= cedula.getText();
-        if(ver.isNumeric(a)){
-            empleado.setCedula(Integer.parseInt(a));
-            ver.edao.crear(empleado);
-            Resultado.setText("El empleado ha sido contratado exitosamente!");
-        }
-        else{
-            Resultado.setText("La cedula no corresponde a un numero");
-        }
+        GestionDeEmpleados ver= new GestionDeEmpleados();
+        
+        resultado.setText(ver.contratarEmpleado(nombre.getText(), apellido.getText(), cedula.getText(), usuario.getText(), contrasenia.getText()));
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -149,6 +142,7 @@ public class ContratarEmpleado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nombre;
+    private javax.swing.JLabel resultado;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }
