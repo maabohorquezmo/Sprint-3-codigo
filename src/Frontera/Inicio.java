@@ -174,10 +174,12 @@ public class Inicio extends javax.swing.JFrame {
                 new Inicio().setVisible(true);
             }
         });
+        
+        //inicializacion();
     }
     
         
-        public void inicializacion(){
+        static public void inicializacion(){
         Empleado Gerente= new Empleado();
         Gerente.setNombre("Alejandro");
         Gerente.setApellido("Orozco");
