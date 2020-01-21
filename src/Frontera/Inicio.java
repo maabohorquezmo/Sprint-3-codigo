@@ -174,8 +174,8 @@ public class Inicio extends javax.swing.JFrame {
                 new Inicio().setVisible(true);
             }
         });
-        
-        //inicializacion();
+        //Solo dejar descomentado cuando se usa por primera vez
+        inicializacion();
     }
     
         

@@ -123,7 +123,7 @@ public class GestionDeEmpleados extends Verificaciones{
             p.setCedula(Integer.parseInt(ced));
             Empleado h=edao.leerCED(p);
             if(h==null){
-                return "El empleado ingresado no existe";
+                return "No existe ningún empleado con ésta cedula.";
             }
             else{
                 edao.eliminar(h);
@@ -131,7 +131,7 @@ public class GestionDeEmpleados extends Verificaciones{
             }
         }
         else{
-            return "El valor ingresado no es un numero";
+            return "La cedula no corresponde a un numero";
         }
     }
 }
